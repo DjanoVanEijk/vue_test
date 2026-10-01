@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../basics/style.css">
+</head>
+<body>
+<h1>Vue 3 Test</h1>    
+
+<div id="app">
+    <h1 v-if="show">{{ teller }}</h1>
+    <p v-show="!show">Counter is currently hidden</p>
+    <button @click="tellerPlus">+1</button>
+    <button @click="tellerMin">-1</button>
+    <button @click="toggleShow">
+        <span v-if="show">Hide</span>
+        <span v-else>Show</span>
+    </button>
+
+    <br><br>
+    <a :href="url" target="_blank">test link</a>
+</div>
+
+
+<script src="../basics/app.js"></script>
+</body>
+</html>

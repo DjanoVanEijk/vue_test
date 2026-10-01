@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<h1>Boeken manager</h1>    
+
+<div id="app">
+<div v-for="boek in boeken">
+    <h2 :class="{ 'gelezen': boek.gelezen }">{{ boek.titel }}</h2>
+    <p>Auteur: {{ boek.auteur }}</p>
+    <button @click="toggleRead(boek)">
+        {{ boek.gelezen ? 'Markeer als ongelezen' : 'Markeer als gelezen' }}
+    </button>
+</div>
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
