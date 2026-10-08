@@ -4,7 +4,8 @@ const app = Vue.createApp({
         return {
             teller: 0,
             show: true,
-            url: 'https://www.google.com'
+            url: 'https://www.google.com',
+            checked: false
         }
     },
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boeken manager</title>
+    <title>oefening 1</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -11,6 +11,8 @@
 <h1>Boeken manager</h1>    
 
 <div id="app">
+    <p>gelezen boeken: {{ gelezenBoeken.length }}</p>
+    <p>niet gelezen boeken: {{ nietGelezenBoeken.length }}</p>
 <div v-for="boek in boeken">
     <h2 :class="{ 'gelezen': boek.gelezen }">{{ boek.titel }}</h2>
     <p>Auteur: {{ boek.auteur }}</p>

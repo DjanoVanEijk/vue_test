@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teller</title>
+    <title>oefening 2</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -21,7 +21,14 @@
     </button>
 
     <br><br>
-    <a :href="url" target="_blank">test link</a>
+
+    <h1>v-bind en v-model</h1>
+    <input type="text" v-model="url">
+    <p>De url is: {{ url }}</p>
+    <a :href="url" target="_blank">Ga naar de url</a>
+    <br><br>
+    <input type ="checkbox" v-model="checked" true-value="gevinkt" false-value="leeg">
+    <p>De checkbox is: {{ checked }}</p>
 </div>
 
 

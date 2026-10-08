@@ -13,6 +13,15 @@ const app = Vue.createApp({
         toggleRead(boek) {
             boek.gelezen = !boek.gelezen;
         }
+    },
+
+    computed: {
+        gelezenBoeken() {
+            return this.boeken.filter(boek => boek.gelezen);
+        },
+        nietGelezenBoeken() {
+            return this.boeken.filter(boek => !boek.gelezen);
+        }
     }
 }) 
 
