@@ -5,7 +5,9 @@ import BooksManager from './components/BooksManager.vue'
 
 <template>
   <main>
-    <Greet />
+    <Greet name="Djano" greeting="Hallo" />
+    <Greet name="Clark" greeting="Hey" />
+    <Greet name="Mary" greeting="Hoi" />
     <BooksManager />
   </main>
 </template>
