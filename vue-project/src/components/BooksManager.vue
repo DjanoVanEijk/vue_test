@@ -1,14 +1,17 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 
-const books = ref([
-  { title: 'De Hobbit', author: 'J.R.R. Tolkien', read: true },
-  { title: '1984', author: 'George Orwell', read: false },
-  { title: 'De Da Vinci Code', author: 'Dan Brown', read: true },
-])
+const props = defineProps({
+  books: {
+    type: Array,
+    required: true,
+  },
+})
 
-const readBooks = computed(() => books.value.filter((book) => book.read))
-const unreadBooks = computed(() => books.value.filter((book) => !book.read))
+const emit = defineEmits(['delete'])
+
+const readBooks = computed(() => props.books.filter((book) => book.read))
+const unreadBooks = computed(() => props.books.filter((book) => !book.read))
 
 function toggleRead(book) {
   book.read = !book.read
@@ -21,11 +24,14 @@ function toggleRead(book) {
     <p>Niet gelezen boeken: {{ unreadBooks.length }}</p>
 
     <ul>
-      <li v-for="book in books" :key="book.title">
+      <li v-for="book in props.books" :key="book.id">
         <h2 :class="{ read: book.read }">{{ book.title }}</h2>
         <p>Auteur: {{ book.author }}</p>
         <button type="button" @click="toggleRead(book)">
           {{ book.read ? 'Markeer als ongelezen' : 'Markeer als gelezen' }}
+        </button>
+        <button type="button" @click="emit('delete', book.id)">
+          Verwijder
         </button>
       </li>
     </ul>
